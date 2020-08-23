@@ -4,15 +4,48 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".MainActivity"
     android:gravity="center"
-    android:padding="15dp">
+    android:orientation="vertical"
+    android:padding="15dp"
+    tools:context=".MainActivity">
 
     <Button
+        android:id="@+id/clickMeBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Click Me"
-        android:id="@+id/clickMeBtn"/>
+        android:text="Click Me" />
+
+    <Button
+        android:id="@+id/writeLogBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Log 남기기 버튼" />
+
+    <Button
+        android:id="@+id/toastBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="사용자가 눌렀다고 인식 가능한 버튼" />
+
+
+    <Button
+        android:id="@+id/alertBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="사용자에게 심각한 알림을 알려줍니다." />
+
+    <EditText
+        android:id="@+id/toastContent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:singleLine="true"
+        android:hint="토스트로 출력할 내용 적기"
+        />
+
+    <Button
+        android:id="@+id/toastContentShowBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="입력 문구 띄우기"/>
 
 </LinearLayout>
