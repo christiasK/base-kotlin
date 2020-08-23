@@ -2,7 +2,6 @@ package io.tissue.base_kotlin
 
 import android.os.Bundle
 import android.util.Log
-import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
@@ -37,13 +36,38 @@ class MainActivity : AppCompatActivity() {
             val dialog = AlertDialog.Builder(this)
             dialog.setTitle("알림!")
             dialog.setMessage("버튼을 클릭하셨습니다.")
-            dialog.show();
+            dialog.show()
         }
 
         toastContentShowBtn.setOnClickListener {
-            val content = findViewById<EditText>(R.id.toastContent)
+            Toast.makeText(this, toastContent.text.toString(), Toast.LENGTH_SHORT).show()
+        }
 
-            Toast.makeText(this, content.text.toString(), Toast.LENGTH_SHORT).show();
+        textViewContentShowBtn.setOnClickListener {
+            when {
+                textViewContent.text.toString() == "안녕하세요." -> {
+                    Toast.makeText(this, "인사.", Toast.LENGTH_SHORT).show()
+                }
+                textViewContent.text.toString() == "안녕히 가세요.." -> {
+                    Toast.makeText(this, "직별인사", Toast.LENGTH_SHORT).show()
+                }
+                textViewContent.text.toString() == "맛있게 드세요." -> {
+                    Toast.makeText(this, "식사인사", Toast.LENGTH_SHORT).show()
+                }
+                else -> {
+                    Toast.makeText(this, "테스트", Toast.LENGTH_SHORT).show()
+                }
+            }
+        }
+
+
+        msgShowBtn.setOnClickListener {
+            val hello = helloMsgText.text.toString()
+            Log.d("추가 내용1", hello)
+            Log.d("출력 내용2", "Toast에 출력될 내용은 $hello 입니다.")
+
+            Toast.makeText(this, "$hello 코틀린~", Toast.LENGTH_SHORT).show()
+
         }
 
     }
